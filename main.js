@@ -176,3 +176,70 @@
 //   };
 
 //   ladder.up().up().down().showStep();
+
+
+
+// NEW
+
+// Создайте функцию-конструктор Calculator, которая создаёт объекты с тремя методами:
+// read() запрашивает два значения при помощи prompt и сохраняет их значение в свойствах объекта.
+// sum() возвращает сумму этих свойств.
+// mul() возвращает произведение этих свойств.
+// Например:
+// let calculator = new Calculator();
+// calculator.read();
+// alert( "Sum=" + calculator.sum() );
+// alert( "Mul=" + calculator.mul() );
+
+// function Calculator (){
+//         this.read = function(){
+//             this.first = +prompt();
+//             this.second = +prompt();
+//         },
+//         this.sum = function(){
+//             let sum = this.first + this.second;
+//             if(isNaN(sum)){
+//                 alert('Вы ввели не числа')
+//             }else{
+//                 return sum;
+//             }
+//         },
+//         this.mul = function(){
+//             let mul = this.first * this.second;
+//             if(!isNaN(mul)){
+//                 return mul;
+//             }
+//         }
+// }
+
+// let wre = new Calculator();
+// console.log(wre.read());
+// console.log(wre.sum());
+// console.log(wre.mul());
+
+
+// Создайте функцию-конструктор Accumulator(startingValue).
+// Объект, который она создаёт, должен уметь следующее:
+// Хранить «текущее значение» в свойстве value. Начальное значение устанавливается в аргументе конструктора startingValue.
+// Метод read() должен использовать prompt для считывания нового числа и прибавления его к value.
+// Другими словами, свойство value представляет собой сумму всех введённых пользователем значений, с учётом начального значения startingValue.
+// Ниже вы можете посмотреть работу кода:
+// let accumulator = new Accumulator(1); // начальное значение 1
+// accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+// accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+// alert(accumulator.value); // выведет сумму этих значений
+
+// function Accumulator(startingValue){
+//     this.read = function (){
+//         let promptValue = prompt();
+//         return +startingValue + +promptValue;
+//     }
+// }
+
+// let accSum = new Accumulator(5);
+// console.log(accSum.read());
+// console.log(accSum);
+
+// let accSum2 = new Accumulator(10);
+// console.log(accSum2.read());
+// console.log(accSum2);
