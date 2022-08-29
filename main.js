@@ -21,7 +21,7 @@
 
 // Напишите функцию isEmpty(obj), которая возвращает true, если у объекта нет свойств, иначе false.
 
-// let obj = {}
+// let obj = {};
 // function isEmpty (obj) {
 //     if(Object.keys(obj).length == 0){
 //         console.log('объект пустой');
@@ -47,7 +47,7 @@
 //     John: 100,
 //     Ann: 160,
 //     Pete: 130
-// }
+// };
 // function getSum (obj){
 //     let sum = 0;
 //     for(let key in obj){
@@ -108,30 +108,71 @@
 // alert( calculator.sum() );
 // alert( calculator.mul() );
 
-let culc = {
-    first:'',
-    second: '',
-    read : function(){
-        let a = prompt();
-        let b = prompt();
+// let culc = {
+//     first:'',
+//     second: '',
+//     read : function(){
+//         this.first = +prompt();
+//         this.second = +prompt();
+//     },
+//     sum: function(){
+//         let sum = this.first + this.second;
+//         if(isNaN(sum)){
+//             alert('Вы ввели не числа')
+//         }else{
+//             return sum;
+//         }
+        
+//     },
+//     mul: function(){
+//         let mul = this.first * this.second;
+//         if(!isNaN(mul)){
+//             return mul;
+//         }
+//     }
+// };
 
-        if(a && b){
-            this.first = a;
-            this.second = b;
-        }else{
-            alert('Вы не ввели числа!');
-        }
-    },
-    sum: function(){
-        let sum = +this.first + +this.second;
-        return sum;
-    },
-    mul: function(){
-        let mul = +this.first * +this.second;
-        return mul;
-    }
-}
+// culc.read();
+// alert(`Cумма: ${culc.sum()}`);
+// alert(`Произведение: ${culc.mul()}`);
 
-culc.read();
-alert(`Cумма: ${culc.sum()}`);
-alert(`Произведение: ${culc.mul()}`);
+
+// Это ladder (лестница) – объект, который позволяет подниматься вверх и спускаться:
+// let ladder = {
+//   step: 0,
+//   up() {
+//     this.step++;
+//   },
+//   down() {
+//     this.step--;
+//   },
+//   showStep: function() { // показывает текущую ступеньку
+//     alert( this.step );
+//   }
+// };
+// Теперь, если нам нужно сделать несколько последовательных вызовов, мы можем выполнить это так:
+// ladder.up();
+// ladder.up();
+// ladder.down();
+// ladder.showStep(); // 1
+// Измените код методов up, down и showStep таким образом, чтобы их вызов можно было сделать по цепочке, например так:
+// ladder.up().up().down().showStep(); // 1
+// Такой подход широко используется в библиотеках JavaScript.
+
+// let ladder = {
+//     step: 0,
+//     up() {
+//       this.step++;
+//       return this;
+//     },
+//     down() {
+//       this.step--;
+//       return this;
+//     },
+//     showStep: function() { 
+//       alert( this.step );
+//       return this;
+//     }
+//   };
+
+//   ladder.up().up().down().showStep();
